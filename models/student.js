@@ -26,6 +26,7 @@ student.find = function (req, res, next) {
 }
 
 student.create = function (req, res, next) {
+  console.log(req.body);
   db.one('INSERT INTO students(fname, lname, image, house_id) VALUES ($1,$2,$3,$4) RETURNING id;',
         [req.body.fname, req.body.lname, req.body.image, req.body.house_id])
     .then(function (result) {

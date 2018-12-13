@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>New Student</title>
+</head>
+<body>
+  <h1>Create A Student</h1>
+  <form action="/students" method="POST">
+    <label for="fname">
+      First Name: <input type="text" id="fname" name="fname">
+    </label>
+    <label for="lname">
+      Last Name: <input type="text" id="lname" name="lname">
+    </label>
+    <label for="image">
+      Image: <input type="text" id="image" name="image">
+    </label>
+    <label for="house_id">
+      House: <select name="house_id" id="house_id">
+        {{#houses}}
+        <option value="{{id}}">{{name}}</option>
+        {{/houses}}
+      </select>
+      <button type="submit">Create Student</button>
+    </label>
+   
+  </form>
+</body>
+</html>
