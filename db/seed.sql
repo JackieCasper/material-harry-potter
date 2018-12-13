@@ -1,9 +1,23 @@
--- remove any records and start the id sequence back to 1
-DROP TABLE IF EXISTS houses CASCADE;
-DROP TABLE IF EXISTS students CASCADE;
+DROP DATABASE IF EXISTS harry_potter_express;
+CREATE DATABASE harry_potter_express;
+\c harry_potter_express
 
 -- add create tables here
 
+CREATE TABLE houses(
+  id serial primary key,
+  name varchar,
+  img_url varchar
+);
+
+CREATE TABLE students(
+  id serial primary key,
+  fname varchar,
+  lname varchar,
+  image varchar,
+  house_id int not null,
+  foreign key(house_id) references houses
+);
 
 -- create houses
 INSERT INTO houses
