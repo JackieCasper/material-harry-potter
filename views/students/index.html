@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <title></title>
+</head>
+
+<body>
+  <nav class="teal lighten-2">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Harry Potter</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a class="white-text" href="sass.html">Sass</a></li>
+        <li><a class="white-text" href="badges.html">Components</a></li>
+        <li><a class="white-text" href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      {{#students}}
+      <div class="col s12 m6 l4">
+        <div class="card medium">
+          <div class="card-content">
+            <div class="card-image">
+              <img src="{{image}}" alt="">
+            </div>
+            <div class="card-title">{{fname}} {{lname}}</div>
+            <div class="card-action teal">
+              <a class="white-text" href="/students/{{id}}">view student</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/students}}
+    </div>
+  </div>
+
+
+
+</body>
+
+<script src="/static/js/main.js"></script>
+
+</html>

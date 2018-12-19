@@ -26,4 +26,16 @@ house.find = function (req, res, next) {
     })
 }
 
+house.findByStudent = function(req, res, next){
+  db.one("SELECT * FROM houses WHERE id=$1", [res.locals.student.house_id])
+    .then(function(reslult){
+      res.locals.house = result;
+      next();
+    })
+    .catch(function(error){
+      console.log(error);
+      next();
+    })
+}
+
 module.exports = house;

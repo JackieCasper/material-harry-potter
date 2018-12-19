@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>New Student</title>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title></title>
 </head>
+
 <body>
-  <h1>Create A Student</h1>
-  <form action="/students" method="POST">
-    <label for="fname">
-      First Name: <input type="text" id="fname" name="fname">
-    </label>
-    <label for="lname">
-      Last Name: <input type="text" id="lname" name="lname">
-    </label>
-    <label for="image">
-      Image: <input type="text" id="image" name="image">
-    </label>
-    <label for="house_id">
-      House: <select name="house_id" id="house_id">
-        {{#houses}}
-        <option value="{{id}}">{{name}}</option>
-        {{/houses}}
-      </select>
-      <button type="submit">Create Student</button>
-    </label>
-   
-  </form>
+  <div class="container">
+    <div class="row">
+      <form class="col s12" action="">
+        <div class="input-field col s6">
+          <input id="fname" type="text" name='fname' class="validate">
+          <label for="fname">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="lname" type="text" name='lname' class="validate">
+          <label for="lname">Last Name</label>
+        </div>
+        <div class="input-field col s12">
+          <select name="house_id" id="house_id">
+            {{#houses}}
+              <option value="{{id}}">{{name}}</option>
+            {{/houses}}
+          <label for="house_id">House</label>
+
+          </select>
+
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right black-text">camera</i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+
 </body>
+
+<script src="/static/js/main.js"></script>
+
 </html>

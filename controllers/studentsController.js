@@ -7,7 +7,7 @@ var house = require('../models/house');
 router.get('/', student.getAll, renderIndex);
 router.get('/new', house.getAll, renderNew);
 router.get('/:id', student.find, renderShow);
-router.get('/:id/edit', student.find, house.getAll, renderEdit);
+router.get('/:id/edit', student.find, house.getAll, selectStudentHouse, renderEdit);
 
 router.post('/', student.create, redirectShow);
 router.put('/:id', student.update, redirectShow);
@@ -32,6 +32,18 @@ function renderNew(req, res) {
     houses: res.locals.houses
   }
   res.render('./students/new', mustacheVariables);
+}
+
+function selectStudentHouse(req, res, next){
+  res.locals.houses = res.locals.houses.map(function (house) {
+    if (house.id === res.locals.student.house_id) {
+      house.selected = "selected";
+    } else {
+      house.selected = "";
+    }
+    return house
+  });
+  next();
 }
 
 function renderEdit(req, res) {

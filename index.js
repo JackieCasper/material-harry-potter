@@ -8,6 +8,8 @@ app.engine('html', mustache());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
+app.use('/static', express.static(__dirname + '/public'));
+
 // body parser config
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());

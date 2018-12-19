@@ -1,0 +1,9 @@
+div.card-image{
+ text-align: center;
+}
+
+div.card-image>img{
+  height: 250px;
+  width: 100%;
+  object-fit: contain;
+}
